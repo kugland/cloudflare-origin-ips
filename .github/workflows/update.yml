@@ -21,10 +21,10 @@ jobs:
       # Setup a GPG key for signing the commit
       - uses: crazy-max/ghaction-import-gpg@v3
         with:
-          gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
+          gpg-private-key: ${{ secrets.GPG_PRIVATE_KEY }}
           passphrase: ${{ secrets.GPG_PASSPHRASE }}
-          git_user_signingkey: true
-          git_commit_gpgsign: true
+          git-user-signingkey: true
+          git-commit-gpgsign: true
       - name: Update Cloudflare IPs
         run: |
           curl -s https://www.cloudflare.com/ips-v4 > ips-v4.txt
