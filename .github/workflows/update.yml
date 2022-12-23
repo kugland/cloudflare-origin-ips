@@ -32,7 +32,6 @@ jobs:
       - name: Commit changes
         run: |
           # Test if there are any changes
-          git diff --quiet --exit-code ips-v4.txt ips-v6.txt && exit 0
           git add ips-v4.txt ips-v6.txt
           git commit -S -m "Update Cloudflare origin IPs" || true
       - name: Push changes
