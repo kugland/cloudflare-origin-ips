@@ -4,7 +4,7 @@
 # This will download the latest list of Cloudflare IPs, and if there
 # are any changes, it will commit them to the repository.
 
-name: Update Cloudflare IPs
+name: update-cloudflare-ips
 
 on:
   workflow_dispatch:
