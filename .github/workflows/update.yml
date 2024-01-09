@@ -4,9 +4,10 @@
 # This will download the latest list of Cloudflare IPs, and if there
 # are any changes, it will commit them to the repository.
 
-name: Update Cloudflare IPs
+name: update-cloudflare-ips
 
 on:
+  workflow_dispatch:
   schedule:
     - cron: "0 0 * * *"
   push:
@@ -17,8 +18,8 @@ jobs:
   update:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: crazy-max/ghaction-import-gpg@v5
+      - uses: actions/checkout@v4
+      - uses: crazy-max/ghaction-import-gpg@v6
         with:
           gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
           passphrase: ${{ secrets.GPG_PASSPHRASE }}
