@@ -27,8 +27,8 @@ jobs:
           git_commit_gpgsign: true
       - name: Update Cloudflare IPs
         run: |
-          curl -s https://www.cloudflare.com/ips-v4 | sort -n > ips-v4.txt
-          curl -s https://www.cloudflare.com/ips-v6 | sort > ips-v6.txt
+          curl -sSL https://www.cloudflare.com/ips-v4 | sort -n > ips-v4.txt
+          curl -sSL https://www.cloudflare.com/ips-v6 | sort > ips-v6.txt
       - name: Commit changes
         run: |
           # Test if there are any changes
